@@ -1,0 +1,34 @@
+---
+title: "STAT 571B Noise Analysis"
+author: "Tiffany Le"
+output: pdf_document
+---
+
+```{r, warning = FALSE}
+library(lmerTest)
+noise <- read.csv("noise.csv")
+noise$Time.as.Factor <- as.factor(noise$Time.as.Factor)
+noise$Day <- as.factor(noise$Day)
+noise$Floor <- as.factor(noise$Floor)
+noise$Operator <- as.factor(noise$Operator)
+```
+
+```{r}
+par(mfrow = c(1, 2), mar = c(3, 3, 2, 1), pin = c(3.2, 2.5))
+full_noise_aov <- aov(Noise ~ Floor*Day*Time.as.Factor, data = noise)
+qq <- qqnorm(coef(full_noise_aov)[-1] * 2, datax = T)
+text(qq$x, qq$y + 0.07, labels = names(qq$x), cex = 0.6)
+qqnorm(abs(coef(full_noise_aov)[-1] * 2), datax = T)
+```
+
+```{r}
+noise_aov <- aov(Noise ~ Floor*Day*Time.as.Factor - Floor:Day:Time.as.Factor, data = noise)
+anova(noise_aov)
+```
+
+```{r}
+block_aov <- lmer(Noise ~ Floor*Time.as.Factor + (1 | Operator), data = noise)
+ranova(block_aov)
+```
+
+Matrix is singular, random effects require within-group replication.
