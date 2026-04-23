@@ -6,6 +6,7 @@ output: pdf_document
 
 ```{r, warning = FALSE}
 library(lmerTest)
+library(pwr)
 noise <- read.csv("noise.csv")
 noise$Time.as.Factor <- as.factor(noise$Time.as.Factor)
 noise$Day <- as.factor(noise$Day)
@@ -29,6 +30,24 @@ anova(noise_aov)
 ```{r, fig.align = "center", out.width = "60%"}
 par(mfrow = c(1, 2), mar = c(3, 3, 2, 1), pin = c(3.2, 2.5))
 plot(noise_aov, which = 1:2)
+```
+
+```{r}
+ss_effect <- anova(noise_aov)["Time.as.Factor", "Sum Sq"]
+ss_error  <- anova(noise_aov)["Residuals", "Sum Sq"]
+df_effect <- anova(noise_aov)["Time.as.Factor", "Df"]
+df_error  <- anova(noise_aov)["Time.as.Factor", "Df"]
+
+eta2 <- ss_effect / (ss_effect + ss_error)
+f <- sqrt(eta2 / (1 - eta2))
+
+
+pwr.f2.test(
+  u = df_effect,
+  v = df_error,
+  f2 = f^2,
+  sig.level = 0.05
+)
 ```
 
 ```{r}
