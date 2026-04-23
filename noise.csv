@@ -1,0 +1,41 @@
+Time,Time as Factor,Day,Floor,Operator,Noise,Notes
+8:57,9,M,1,Chloe,36.6,
+8:59,9,M,2,Chloe,44.7,
+9:01,9,M,3,Chloe,41.3,
+9:03,9,M,4,Chloe,46.1,They were polishing the floor in the loby but the room itself was empty
+9:04,9,M,5,Chloe,47.4,Also empty turns out AC is really loud
+1:45,2,M,1,Alfred,51.4,had a meeting so started a bit early
+1:48,2,M,2,Alfred,50,
+1:50,2,M,3,Alfred,50.3,
+1:53,2,M,4,Alfred,46,
+1:56,2,M,5,Alfred,50.8,
+9:03,9,Tu,2,Tiffany,46.3,
+9:08,9,Tu,3,Tiffany,44.3,Audible hammering sound
+9:11,9,Tu,4,Tiffany,43.6,
+9:14,9,Tu,5,Tiffany,49.2,"Horrid AC, still like 2 sleeping people"
+9:18,9,Tu,1,Tiffany,44.9,People are clearly talking
+2:00,2,Tu,1,Chloe,58,
+2:02,2,Tu,2,Chloe,52.8,
+2:03,2,Tu,3,Chloe,47.5,
+2:05,2,Tu,4,Chloe,45.2,
+2:07,2,Tu,5,Chloe,47.3,
+9:05,9,Th,1,Tiffany,38.1,
+9:07,9,Th,2,Tiffany,48.8,
+9:11,9,Th,3,Tiffany,40.3,Toilet flushing sounds clear as day
+9:14,9,Th,4,Tiffany,45,
+9:16,9,Th,5,Tiffany,49.8,
+2:00,2,Th,1,KyeongHee,51,
+2:03,2,Th,2,KyeongHee,51.2,
+2:06,2,Th,3,KyeongHee,45,
+2:08,2,Th,4,KyeongHee,43.5,
+2:11,2,Th,5,KyeongHee,50.1,"Very quiet, which makes daily noise louder such as AC, putting down a can or a water bottle"
+9:00,9,F,1,KyeongHee,43.3,
+9:02,9,F,2,KyeongHee,45.2,
+9:05,9,F,3,KyeongHee,42.3,
+9:07,9,F,4,KyeongHee,44.8,no one in this area
+9:10,9,F,5,KyeongHee,50.5,"one person studying, AC sounds"
+2:04,2,F,1,Alfred,41.8,
+2:06,2,F,2,Alfred,52.2,
+2:09,2,F,3,Alfred,47.2,
+2:10,2,F,4,Alfred,45.6,
+2:12,2,F,5,Alfred,49.2,
