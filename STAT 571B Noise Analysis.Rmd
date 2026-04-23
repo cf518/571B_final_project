@@ -26,6 +26,40 @@ noise_aov <- aov(Noise ~ Floor*Day*Time.as.Factor - Floor:Day:Time.as.Factor, da
 anova(noise_aov)
 ```
 
+```{r, fig.align = "center", out.width = "60%"}
+par(mfrow = c(1, 2), mar = c(3, 3, 2, 1), pin = c(3.2, 2.5))
+plot(noise_aov, which = 1:2)
+```
+
+```{r}
+red_noise_aov <- aov(Noise ~ Floor*Time.as.Factor, data = noise, contrasts = list(Floor = contr.sum,
+                                                                                  Time.as.Factor = contr.sum))
+anova(red_noise_aov)
+```
+
+Design unfolded into 4 replicates of 5x2 design.
+
+```{r, fig.align = "center", out.width = "60%"}
+par(mfrow = c(1, 2), mar = c(3, 3, 2, 1), pin = c(3.2, 2.5))
+plot(red_noise_aov, which = 1:2)
+```
+
+All outliers are floor 1.
+
+```{r}
+coef(red_noise_aov)
+```
+
+```{r}
+aggregate(Noise ~ Floor*Time.as.Factor, data = noise, FUN = mean)
+```
+
+```{r}
+aggregate(Noise ~ Time.as.Factor, data = noise, FUN = mean)
+```
+
+Report this in paper as model.
+
 ```{r}
 block_aov <- lmer(Noise ~ Floor*Time.as.Factor + (1 | Operator), data = noise)
 ranova(block_aov)
